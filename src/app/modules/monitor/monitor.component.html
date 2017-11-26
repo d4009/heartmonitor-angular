@@ -47,68 +47,52 @@
       <div class="page-header-content">
         <div class="page-title">
           <h4>
-            Patients list
+            Heart Beat Monitor
           </h4>
         </div>
       </div>
     </div>
     <div class="content">
       <div class="panel panel-flat">
-<!--        <div class="panel-heading">
-          <h5 class="panel-title">List of patients being monitored</h5>
-        </div> -->
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Username</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>DOB</th>
-                <th>Height</th>
-                <th>Weight</th>
-                <th>Emergency Number</th>
-                <th>Options</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let user of users">
-                <td>
-                  {{user.username}}
-                </td>
-                <td>
-                  {{user.name}}
-                </td>
-                <td>
-                  {{(user.gender?'Nam':'Nu')}}
-                </td>
-                <td>
-                  {{user.dob.toDateString()}}
-                </td>
-                <td>
-                  {{user.height}}
-                </td>
-                <td>
-                  {{user.weight}}
-                </td>
-                <td>
-                  {{user.emergencynumber}}
-                </td>
-                <td>
-                  <!-- icons for options -->
-                  <a [routerLink]="['/monitor/'+user.username]">
-                    <i class="icon-eye"></i>
-                  </a>
-                  <a>
-                    <i class="icon-pencil7" style="margin-left: 4px;"></i>
-                  </a>
-                  <a>
-                    <i class="icon-x" style="margin-left: 4px;"></i>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="panel-heading">
+          <h5 class="panel-title">Heart beat graph</h5>
+          <div class="heading-elements">
+            <ul class="icons-list">
+              <li><a data-action="collapse"></a></li>
+              <li><a data-action="reload"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+              <input type="text" class="form-control daterange-time" value="11/23/2017 08:00 am - 11/23/2017 9:00 am">
+            </div>
+          </div>
+          <div class="chart-container" style="height:400px">
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-flat">
+        <div class="panel-heading">
+          <h5 class="panel-title">BPM graph</h5>
+          <div class="heading-elements">
+            <ul class="icons-list">
+              <li><a data-action="collapse"></a></li>
+              <li><a data-action="reload"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+              <input type="text" class="form-control daterange-time" value="11/23/2017 08:00 am - 11/23/2017 9:00 am">
+            </div>
+          </div>
+          <div class="chart-container" style="height:300px">
+          </div>
         </div>
       </div>
     </div>

@@ -8,6 +8,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {AuthModule} from "./modules/auth/auth.module";
 import { MainComponent } from './modules/main/main.component';
 import {MainModule} from "./modules/main/main.module";
+import { MonitorComponent } from './modules/monitor/monitor.component';
+import {MonitorModule} from "./modules/monitor/monitor.module";
 
 const routes: Routes = [
     {path: '', redirectTo: '/login', pathMatch: 'full'}
@@ -19,7 +21,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserModule,
       AuthModule,
-      MainModule
+      MainModule,
+      MonitorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
