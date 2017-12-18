@@ -2,7 +2,7 @@ import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {LoginModel} from "./login.model";
 export class LoginForm extends FormGroup {
 
-    constructor(loginModel:LoginModel) {
+    constructor(loginModel: LoginModel) {
         super({});
         this.addControl('username',new FormControl(loginModel.username,[Validators.required]));
         this.addControl('password',new FormControl(loginModel.password,[Validators.required]));

@@ -5,11 +5,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './modules/core/header/header.component';
 import { LoginComponent } from './modules/auth/login.component';
 import {RouterModule, Routes} from "@angular/router";
-import {AuthModule} from "./modules/auth/auth.module";
+import {LoginModule} from "./modules/auth/login.module";
 import { MainComponent } from './modules/main/main.component';
 import {MainModule} from "./modules/main/main.module";
 import { MonitorComponent } from './modules/monitor/monitor.component';
 import {MonitorModule} from "./modules/monitor/monitor.module";
+import {APP_CONFIG} from "./token";
+import {SERVER_CONFIG} from "./config";
+import {Http, HttpModule} from "@angular/http";
+import {AuthGuard} from "./auth.guard";
 
 const routes: Routes = [
     {path: '', redirectTo: '/login', pathMatch: 'full'}
@@ -20,11 +24,15 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-      AuthModule,
+      LoginModule,
       MainModule,
-      MonitorModule
+      MonitorModule,
+      HttpModule,
   ],
-  providers: [],
+  providers: [
+      {provide: APP_CONFIG, useValue: SERVER_CONFIG},
+      AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
