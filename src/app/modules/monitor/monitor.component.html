@@ -1,7 +1,7 @@
 <app-header [loggedIn]="true"></app-header>
 <div class="page-container">
 <div class="page-content">
-    <div class="sidebar sidebar-main">
+      <div class="sidebar sidebar-main">
       <div class="sidebar-content">
           <!-- user -->
           <div class="sidebar-user">
@@ -30,10 +30,10 @@
                               <span>Patients list</span>
                           </a>
                       </li>
-                      <li routerLinkActive="active">
-                          <a [routerLink]="['/monitor']">
-                              <i class="icon-chart"></i>
-                              <span>Monitoring</span>
+                      <li>
+                          <a (click)="logout()">
+                              <i class="icon-move-left"></i>
+                              <span>Log out</span>
                           </a>
                       </li>
                   </ul>
@@ -64,13 +64,7 @@
           </div>
         </div>
         <div class="panel-body">
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="icon-calendar22"></i></span>
-              <input type="text" class="form-control daterange-time" value="11/23/2017 08:00 am - 11/23/2017 9:00 am">
-            </div>
-          </div>
-          <div class="chart-container" style="height:400px">
+          <div class="chart-container">
             <app-chart [lineChartData]="lineChartRawData" [lineChartLabels]="lineChartRawLabels"></app-chart>
           </div>
         </div>
@@ -86,13 +80,7 @@
           </div>
         </div>
         <div class="panel-body">
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="icon-calendar22"></i></span>
-              <input type="text" class="form-control daterange-time" value="11/23/2017 08:00 am - 11/23/2017 9:00 am">
-            </div>
-          </div>
-          <div class="chart-container" style="height:300px">
+          <div class="chart-container" >
             <app-chart [lineChartData]="lineChartBpmData" [lineChartLabels]="lineChartBpmLabels"></app-chart>
           </div>
         </div>

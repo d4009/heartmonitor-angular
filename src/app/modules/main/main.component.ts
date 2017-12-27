@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {UserProfile} from "../core/user-profile";
 import {UserService} from "../core/user.service";
+import {Router, RouterModule} from "@angular/router";
 
 @Component({
   selector: 'app-main',
@@ -9,7 +10,8 @@ import {UserService} from "../core/user.service";
 })
 export class MainComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+              private router: Router) { }
   users: Array<UserProfile>;
   selectedUser: UserProfile;
 
@@ -17,5 +19,11 @@ export class MainComponent implements OnInit {
     this.userService.getListPatients().subscribe(userArr => {
       this.users = userArr;
     });
- }
+  }
+
+  logout(event) {
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
+    this.router.navigate(['/login']);
+  }
 }

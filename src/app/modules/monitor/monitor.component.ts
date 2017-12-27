@@ -16,10 +16,10 @@ export class MonitorComponent implements OnInit {
 
   rawData: MonitorData = new MonitorData();
   lineChartRawData: Array<any> = [{data: [], label:'raw'}];
-  lineChartRawLabels: Array<any> = [];
+  lineChartRawLabels: Array<any> = new Array(200);
   bpmData: MonitorData = new MonitorData();
   lineChartBpmData: Array<any> = [{data:[],label:'bpm'}];
-  lineChartBpmLabels: Array<any> = new Array(500);
+  lineChartBpmLabels: Array<any> = new Array(50);
 
   ngOnInit() {
     this.route.params.subscribe(params => {

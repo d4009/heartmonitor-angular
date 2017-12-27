@@ -30,10 +30,10 @@
                               <span>Patients list</span>
                           </a>
                       </li>
-                      <li routerLinkActive="active">
-                          <a [routerLink]="['/monitor']">
-                              <i class="icon-chart"></i>
-                              <span>Monitoring</span>
+                      <li>
+                          <a (click)="logout()">
+                              <i class="icon-move-left"></i>
+                              <span>Log out</span>
                           </a>
                       </li>
                   </ul>
@@ -99,12 +99,12 @@
                   <a [routerLink]="['/monitor/'+user.username]">
                     <i class="icon-eye"></i>
                   </a>
-                  <a>
-                    <i class="icon-pencil7" style="margin-left: 4px;"></i>
-                  </a>
-                  <a>
-                    <i class="icon-x" style="margin-left: 4px;"></i>
-                  </a>
+                  <!--<a>-->
+                    <!--<i class="icon-pencil7" style="margin-left: 4px;"></i>-->
+                  <!--</a>-->
+                  <!--<a>-->
+                    <!--<i class="icon-x" style="margin-left: 4px;"></i>-->
+                  <!--</a>-->
                 </td>
               </tr>
             </tbody>
